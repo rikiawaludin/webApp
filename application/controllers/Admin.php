@@ -12,7 +12,7 @@ class Admin extends CI_Controller
         $this->load->model('DataUser');
         $this->load->model('userProject');
         $this->load->model('formSelect');
-        $this->load->library('dompdf_gen');
+        // $this->load->library('dompdf_gen');
     }
 
     public function index()
@@ -316,84 +316,84 @@ class Admin extends CI_Controller
     }
 
     //CETAK PDF
-    public function cetakPdfDepartemen()
-    {
+    // public function cetakPdfDepartemen()
+    // {
 
-        $this->load->library('dompdf_gen');
-
-
-        $data['departemen'] = $this->model_departemen->get_departemen();
-        $this->load->view('Admin/pdfDepartemen', $data);
+    //     $this->load->library('dompdf_gen');
 
 
-        $paper_size = 'A4';
-        $orientation = 'potrait';
-        $html = $this->output->get_output();
-        $this->dompdf->set_paper($paper_size, $orientation);
-
-        $this->dompdf->load_html($html);
-        $this->dompdf->render();
-        $this->dompdf->stream("Departemen.pdf", array('Attachment' => 0));
-
-    }
-    public function cetakPdfProject()
-    {
-
-        $this->load->library('dompdf_gen');
+    //     $data['departemen'] = $this->model_departemen->get_departemen();
+    //     $this->load->view('Admin/pdfDepartemen', $data);
 
 
-        $data['project'] = $this->model_project->get_project();
-        $this->load->view('Admin/pdfProject', $data);
+    //     $paper_size = 'A4';
+    //     $orientation = 'potrait';
+    //     $html = $this->output->get_output();
+    //     $this->dompdf->set_paper($paper_size, $orientation);
+
+    //     $this->dompdf->load_html($html);
+    //     $this->dompdf->render();
+    //     $this->dompdf->stream("Departemen.pdf", array('Attachment' => 0));
+
+    // }
+    // public function cetakPdfProject()
+    // {
+
+    //     $this->load->library('dompdf_gen');
 
 
-        $paper_size = 'A4';
-        $orientation = 'potrait';
-        $html = $this->output->get_output();
-        $this->dompdf->set_paper($paper_size, $orientation);
-
-        $this->dompdf->load_html($html);
-        $this->dompdf->render();
-        $this->dompdf->stream("Project.pdf", array('Attachment' => 0));
-
-    }
-    public function cetakPdfPengguna()
-    {
-
-        $this->load->library('dompdf_gen');
+    //     $data['project'] = $this->model_project->get_project();
+    //     $this->load->view('Admin/pdfProject', $data);
 
 
-        $data['user'] = $this->DataUser->get_user();
-        $this->load->view('Admin/pdfUser', $data);
+    //     $paper_size = 'A4';
+    //     $orientation = 'potrait';
+    //     $html = $this->output->get_output();
+    //     $this->dompdf->set_paper($paper_size, $orientation);
+
+    //     $this->dompdf->load_html($html);
+    //     $this->dompdf->render();
+    //     $this->dompdf->stream("Project.pdf", array('Attachment' => 0));
+
+    // }
+    // public function cetakPdfPengguna()
+    // {
+
+    //     $this->load->library('dompdf_gen');
 
 
-        $paper_size = 'A4';
-        $orientation = 'potrait';
-        $html = $this->output->get_output();
-        $this->dompdf->set_paper($paper_size, $orientation);
-
-        $this->dompdf->load_html($html);
-        $this->dompdf->render();
-        $this->dompdf->stream("Pengguna.pdf", array('Attachment' => 0));
-
-    }
-    public function cetakPdfUserProject()
-    {
-
-        $this->load->library('dompdf_gen');
+    //     $data['user'] = $this->DataUser->get_user();
+    //     $this->load->view('Admin/pdfUser', $data);
 
 
-        $data['userProject'] = $this->userProject->get_userProject();
-        $this->load->view('Admin/pdfUserProject', $data);
+    //     $paper_size = 'A4';
+    //     $orientation = 'potrait';
+    //     $html = $this->output->get_output();
+    //     $this->dompdf->set_paper($paper_size, $orientation);
+
+    //     $this->dompdf->load_html($html);
+    //     $this->dompdf->render();
+    //     $this->dompdf->stream("Pengguna.pdf", array('Attachment' => 0));
+
+    // }
+    // public function cetakPdfUserProject()
+    // {
+
+    //     $this->load->library('dompdf_gen');
 
 
-        $paper_size = 'A4';
-        $orientation = 'potrait';
-        $html = $this->output->get_output();
-        $this->dompdf->set_paper($paper_size, $orientation);
+    //     $data['userProject'] = $this->userProject->get_userProject();
+    //     $this->load->view('Admin/pdfUserProject', $data);
 
-        $this->dompdf->load_html($html);
-        $this->dompdf->render();
-        $this->dompdf->stream("User Project.pdf", array('Attachment' => 0));
 
-    }
+    //     $paper_size = 'A4';
+    //     $orientation = 'potrait';
+    //     $html = $this->output->get_output();
+    //     $this->dompdf->set_paper($paper_size, $orientation);
+
+    //     $this->dompdf->load_html($html);
+    //     $this->dompdf->render();
+    //     $this->dompdf->stream("User Project.pdf", array('Attachment' => 0));
+
+    // }
 }
